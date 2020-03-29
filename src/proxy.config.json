@@ -1,0 +1,9 @@
+{
+    "/api/*": {
+    "target": "https://api.rootnet.in/covid19-in/stats/latest",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {"^/api" : ""}
+    }
+  }

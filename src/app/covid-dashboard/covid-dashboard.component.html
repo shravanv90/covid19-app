@@ -1,0 +1,119 @@
+<hr>
+<h1>COVID-19 Statistics in India</h1>
+  <hr>
+  
+  <hr>
+<div *ngIf = "response" class="row">
+<div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+    
+    <div class="card-body">
+      <h5 class="card-title">New Cases : {{response.response[0].cases.new}}</h5>
+      <h5 class="card-title"></h5>
+      <p class="card-text">New cases reported for COVID-19 in India.</p>
+    </div>
+  </div>
+  <hr>
+  <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
+    
+    <div class="card-body">
+      <h5 class="card-title">Active cases : {{response.response[0].cases.active}}</h5>
+      <h5 class="card-title"></h5>
+      <p class="card-text">Active cases of COVID-19 recorded.</p>
+    </div>
+  </div>
+  <hr>
+  <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+    
+    <div class="card-body">
+      <h5 class="card-title">Recovered : {{response.response[0].cases.recovered}}</h5>
+      <h5 class="card-title"></h5>
+      <p class="card-text">Recovered cases of COVID-19 recorded.</p>
+    </div>
+  </div>
+  <hr>
+  <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+    
+    <div class="card-body">
+      <h5 class="card-title">Total cases : {{response.response[0].cases.total}}</h5>
+      <h5 class="card-title"></h5>
+      <p class="card-text">Total cases of COVID-19 recorded.</p>
+    </div>
+  </div>
+</div>
+
+<button type="button" class="btn btn-primary btn-lg btn-block" (click)="getStateData()">Show State Data</button>
+<hr>
+<div style="text-align:center">
+    <canvas style ="display: block;margin: 0 auto;" id="myChart" width="700" height="400"></canvas>
+</div>
+<hr>
+
+<table *ngIf = "stateData" class="table table-striped">
+    
+    <thead class="sticky"> 
+      <tr>
+        <th>Region</th>
+        <th>Confirmed Cases Indian</th>
+        <th>Confirmed Cases Foreign</th>
+        <th>Discharged</th>
+        <th>Deaths</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let state of stateData.data.regional">
+        <td>{{state.loc}}</td>
+        <td>{{state.confirmedCasesIndian}}</td>
+        <td>{{state.confirmedCasesForeign}}</td>
+        <td>{{state.discharged}}</td>
+        <td>{{state.deaths}}</td>
+      </tr>
+     
+    </tbody>
+    
+  </table>
+
+  <div class="container">
+    <img  src="https://www.who.int/images/default-source/wpro/health-topic/covid-19/slide2.jpeg?sfvrsn=6fc5f651_6" alt = "COVID-19 Know facts">
+      <img  src="https://www.who.int/images/default-source/wpro/health-topic/covid-19/slide39d52040065b54a20b4f75e1c5f6607c6.jpeg?sfvrsn=a6e74ee6_6" alt = "COVID-19 Reduce risks">
+    </div>
+    <hr>
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/5K9fpJq3MNg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <hr>
+<h2> Important things to know.</h2>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">When to get tested for COVID-19?</h5>
+          <p class="card-text">Disease is primarily reported in Individuals with travel history to the affected countries or close contacts
+            of positive cases</p>
+          <a href="https://www.mohfw.gov.in/pdf/FINAL_14_03_2020_ENg.pdf" target = "_blank" class="btn btn-primary">Click Here</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">How to use face masks in public ?</h5>
+          <p class="card-text"> Evidence based information to general public
+            on use of face mask.</p>
+            <a href="https://www.mohfw.gov.in/pdf/Useofmaskbypublic.pdf" target = "_blank" class="btn btn-primary">Click Here</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Guidelines for Home quarantine</h5>
+            <p class="card-text"> Home quarantine is applicable to all such contacts of a
+                suspect or confirmed case of COVID-19. </p>
+              <a href="https://www.mohfw.gov.in/pdf/Guidelinesforhomequarantine.pdf" target = "_blank" class="btn btn-primary">Click Here</a>
+          </div>
+        </div>
+      </div>
+
+  </div>
